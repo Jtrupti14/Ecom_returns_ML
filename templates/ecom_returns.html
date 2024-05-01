@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Order Form</title>
+</head>
+<body>
+    <h1>Product Order Form</h1>
+    <form id="orderForm">
+        <label for="articleID">Article ID:</label>
+        <input type="text" id="articleID" name="articleID" required><br><br>
+
+        <label for="colorCode">Color Code:</label>
+        <input type="text" id="colorCode" name="colorCode" required><br><br>
+
+        <label for="sizeCode">Size Code:</label>
+        <input type="text" id="sizeCode" name="sizeCode" required><br><br>
+
+        <label for="productGroup">Product Group:</label>
+        <input type="text" id="productGroup" name="productGroup" required><br><br>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" required><br><br>
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" required><br><br>
+
+        <label for="rrp">RRP:</label>
+        <input type="number" id="rrp" name="rrp" required><br><br>
+
+        <label for="deviceID">Device ID:</label>
+        <input type="text" id="deviceID" name="deviceID" required><br><br>
+
+        <label for="paymentMethod">Payment Method:</label>
+        <input type="text" id="paymentMethod" name="paymentMethod" required><br><br>
+
+        <button type="button" onclick="submitOrder()">Submit Order</button>
+    </form>
+
+    <p id="output"></p>
+
+    <script>
+        function submitOrder() {
+            const form = document.getElementById("orderForm");
+            const formData = new FormData(form);
+
+            // Simulate backend processing (replace with actual logic)
+            const returnQuantity = Math.floor(Math.random() * formData.get("quantity")) + 1;
+
+            // Update output paragraph
+            const outputElement = document.getElementById("output");
+            outputElement.textContent = `Return Quantity: ${returnQuantity}`;
+        }
+    </script>
+</body>
+</html>
