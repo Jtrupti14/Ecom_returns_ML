@@ -14,12 +14,16 @@ class ArticleReturns():
         self.rrp            = rrp
         self.deviceID       = deviceID
         self.paymentMethod  = paymentMethod
+
+
     def load_model(self):
         # we are reading model and json file"
         with open(config.MODEL_FILE_PATH,"rb") as file:
             self.model = pickle.load(file)
         with open(config.JOSN_FILE_PATH,"r") as file:
             self.json_data = json.load(file)
+
+
     def get_predict_returns(self):
         self.load_model() # calling above model function
         test_array = np.zeros(len(self.json_data["columns"]))

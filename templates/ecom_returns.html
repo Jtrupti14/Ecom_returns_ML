@@ -46,11 +46,11 @@
             const formData = new FormData(form);
 
             // Simulate backend processing (replace with actual logic)
-            const returnQuantity = Math.floor(Math.random() * formData.get("quantity")) + 1;
+            // const returnQuantity = Math.floor(Math.random() * formData.get("quantity")) + 1;
 
             // Update output paragraph
             const outputElement = document.getElementById("output");
-            outputElement.textContent = `Return Quantity: ${returnQuantity}`;
+            outputElement.textContent = `Return Quantity: ${predicted_returns}`;
         }
     </script>
 </body>
